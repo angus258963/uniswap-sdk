@@ -10,7 +10,8 @@ export enum Chain {
   GÖRLI = 5,
   KOVAN = 42,
   XDAI = 100,
-  CFX = 1029
+  CFX = 1029,
+  AVALANCHE = 43114
 }
 
 export type ChainId = number
@@ -35,6 +36,9 @@ const INIT_CODE_HASH_XDAI = '0x3f88503e8580ab941773b59034fb4b2a63e86dbc031b3633a
 const FACTORY_ADDRESS_CFX = '0x865f55a399bf9250ae781adfbed71e70c12bd2d8'
 const INIT_CODE_HASH_CFX = '0xa6330451e4d6d3fc19f31fc5ee71147d88812b0da79f64b03ed210fd594d84e9'
 
+const FACTORY_ADDRESS_JOE = '0x9ad6c38be94206ca50bb0d90783181662f0cfa10'
+const INIT_CODE_HASH_JOE = '0x0bbca9af0511ad1a1da383135cf3a8d2ac620e549ef9f6ae3a4c33c2fed0af91'
+
 interface FactoryParams {
   factoryAddress: string
   initCode: string
@@ -50,6 +54,11 @@ export function getFactoryParams(chainId: ChainId): FactoryParams {
     return {
       factoryAddress: FACTORY_ADDRESS_CFX,
       initCode: INIT_CODE_HASH_CFX
+    }
+  } else if (chainId === Chain.AVALANCHE) {
+    return {
+      factoryAddress: FACTORY_ADDRESS_JOE,
+      initCode: INIT_CODE_HASH_JOE
     }
   } else {
     return {

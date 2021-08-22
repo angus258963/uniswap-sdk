@@ -87,9 +87,26 @@ export const WETH_GÖRLI = new Token(
   'WETH',
   'Wrapped Ether'
 )
+
 export const WETH_KOVAN = new Token(
   Chain.KOVAN,
   '0xd0A1E359811322d97991E03f863a0C30C2cF029C',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
+
+export const WETH_CFX = new Token(
+  Chain.CFX,
+  '0x8d7DF9316FAa0586e175B5e6D03c6bda76E3d950',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
+
+export const WETH_AVALANCHE = new Token(
+  Chain.AVALANCHE,
+  '0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7',
   18,
   'WETH',
   'Wrapped Ether'
@@ -100,5 +117,7 @@ export const WETH: Partial<Record<ChainId, Token>> = {
   [Chain.ROPSTEN]: WETH_ROPSTEN,
   [Chain.RINKEBY]: WETH_RINKEBY,
   [Chain.GÖRLI]: WETH_GÖRLI,
-  [Chain.KOVAN]: WETH_KOVAN
+  [Chain.KOVAN]: WETH_KOVAN,
+  [Chain.CFX]: WETH_CFX,
+  [Chain.AVALANCHE]: WETH_AVALANCHE,
 }
