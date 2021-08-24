@@ -10,6 +10,7 @@ export enum Chain {
   GÖRLI = 5,
   KOVAN = 42,
   XDAI = 100,
+  KCC = 321,
   CFX = 1029,
   AVALANCHE = 43114
 }
@@ -39,6 +40,9 @@ const INIT_CODE_HASH_CFX = '0xa6330451e4d6d3fc19f31fc5ee71147d88812b0da79f64b03e
 const FACTORY_ADDRESS_JOE = '0x9ad6c38be94206ca50bb0d90783181662f0cfa10'
 const INIT_CODE_HASH_JOE = '0x0bbca9af0511ad1a1da383135cf3a8d2ac620e549ef9f6ae3a4c33c2fed0af91'
 
+const FACTORY_ADDRESS_KUSWAP = '0xAE46cBBCDFBa3bE0F02F463Ec5486eBB4e2e65Ae'
+const INIT_CODE_HASH_KUSWAP = '0x5d71f8561d80ed979ca73d5b742278f4719baab5f0dd78b6ca91bec31f0e2dbc'
+
 interface FactoryParams {
   factoryAddress: string
   initCode: string
@@ -59,6 +63,11 @@ export function getFactoryParams(chainId: ChainId): FactoryParams {
     return {
       factoryAddress: FACTORY_ADDRESS_JOE,
       initCode: INIT_CODE_HASH_JOE
+    }
+  } else if (chainId === Chain.KCC) {
+    return {
+      factoryAddress: FACTORY_ADDRESS_KUSWAP,
+      initCode: INIT_CODE_HASH_KUSWAP
     }
   } else {
     return {

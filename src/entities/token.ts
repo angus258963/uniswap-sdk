@@ -112,6 +112,14 @@ export const WETH_AVALANCHE = new Token(
   'Wrapped Ether'
 )
 
+export const WETH_KCC = new Token(
+  Chain.KCC,
+  '0x4446fc4eb47f2f6586f9faab68b3498f86c07521',
+  18,
+  'WETH',
+  'Wrapped Ether'
+)
+
 export const WETH: Partial<Record<ChainId, Token>> = {
   [Chain.MAINNET]: WETH_MAINNET,
   [Chain.ROPSTEN]: WETH_ROPSTEN,
@@ -120,4 +128,5 @@ export const WETH: Partial<Record<ChainId, Token>> = {
   [Chain.KOVAN]: WETH_KOVAN,
   [Chain.CFX]: WETH_CFX,
   [Chain.AVALANCHE]: WETH_AVALANCHE,
+  [Chain.KCC]: WETH_AVALANCHE,
 }
